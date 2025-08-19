@@ -1,38 +1,32 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stat Smash</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiplayer Card Game</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Home Screen -->
-  <div id="homeScreen">
-    <h1>Stat Smash</h1>
-    <input type="text" id="playerName" placeholder="Enter your name" />
-    <button id="createRoomBtn">Create Room</button>
-    <div>
-      <input type="text" id="joinCode" placeholder="Enter Room Code" />
-      <button id="joinRoomBtn">Join Room</button>
-    </div>
-  </div>
+<div id="lobby">
+  <h2>Multiplayer Card Game</h2>
+  <input type="text" id="playerName" placeholder="Your Name">
+  <button id="createBtn">Create Room</button>
+  <input type="text" id="roomCode" placeholder="Room Code">
+  <button id="joinBtn">Join Room</button>
+</div>
 
-  <!-- Lobby Screen -->
-  <div id="lobbyScreen" style="display:none;">
-    <h2>Lobby</h2>
-    <p>Room Code: <span id="roomCodeDisplay"></span></p>
-    <ul id="playerList"></ul>
-    <button id="startGameBtn">Start Game</button>
-  </div>
+<div id="game" style="display:none;">
+  <h3 id="roomInfo"></h3>
+  <div id="playersList"></div>
+  <div id="cardArea"></div>
+  <div id="roundInfo"></div>
+  <button id="chooseAttack" class="statBtn">Attack</button>
+  <button id="chooseDefense" class="statBtn">Defense</button>
+  <button id="chooseSpeed" class="statBtn">Speed</button>
+</div>
 
-  <!-- Game Screen -->
-  <div id="gameScreen" style="display:none;">
-    <canvas id="gameCanvas"></canvas>
-    <div id="metricButtons" class="metric-buttons"></div>
-  </div>
-
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="client.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="client.js"></script>
 </body>
 </html>
