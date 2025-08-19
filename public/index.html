@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stat Smash</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Home Screen -->
+  <div id="homeScreen">
+    <h1>Stat Smash</h1>
+    <input type="text" id="playerName" placeholder="Enter your name" />
+    <button id="createRoomBtn">Create Room</button>
+    <div>
+      <input type="text" id="joinCode" placeholder="Enter Room Code" />
+      <button id="joinRoomBtn">Join Room</button>
+    </div>
+  </div>
+
+  <!-- Lobby Screen -->
+  <div id="lobbyScreen" style="display:none;">
+    <h2>Lobby</h2>
+    <p>Room Code: <span id="roomCodeDisplay"></span></p>
+    <ul id="playerList"></ul>
+    <button id="startGameBtn">Start Game</button>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="gameScreen" style="display:none;">
+    <canvas id="gameCanvas"></canvas>
+    <div id="metricButtons" class="metric-buttons"></div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
